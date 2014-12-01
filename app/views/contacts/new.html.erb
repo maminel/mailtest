@@ -1,0 +1,27 @@
+<div align="center">
+  <h3>Send A message to Us</h3>
+
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <%= f.input :name, :required => true %>
+    <%= f.input :adress, :required => true %>
+    <%= f.input :adress, :required => true %>
+    <%= f.input :street_po, :required => true %>
+    <%= f.input :city, :required => true %>
+    <%= f.input :state, :required => true %>
+    <%= f.input :zip, :required => true %>
+    <%= f.input :telephone, :required => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :name_hs, :required => true %>
+    <%= f.input :location_hs, :required => true %>
+    <%= f.input :enrolled, :collection => [[true, 'Yes'] ,[false, 'No']], as: :radio_buttons %>
+    <%= f.input :graduateyear, :required => false %>
+    <%= f.input :interest, :collection =>["Culinary Arts","Education Careers","Health Care","Process Technology"], as: :check_boxes %>
+    <%= f.input :Eentrymonth, :collection => ["August","January"], as: :radio_buttons %>
+    <%= f.input :Eentryyear, label: "Expected entry year", :collection => 2014..2020 %>
+    <%= f.input :message, :as => :text, :required => true %>
+    <div>
+      </br>
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
